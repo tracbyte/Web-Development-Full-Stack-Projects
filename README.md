@@ -2,7 +2,7 @@
 A collection of full-stack web development projects, built as base templates for learning, student use, and future project starters. Each folder is a self-contained project with its own setup instructions.
 
 # Projects
-1. college-management-system
+1. [college-management-system](./college-management-system)
 
 2. E-Commerce Platform with AI-Powered Suggestions
 
