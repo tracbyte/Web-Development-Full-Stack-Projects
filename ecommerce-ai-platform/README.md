@@ -2,23 +2,23 @@
 
 A base MERN stack e-commerce project (MongoDB, Express, React, Node.js) built
 as a starting point for student mini/major projects. Has the usual e-commerce
-pieces — products, cart, checkout, orders, reviews — plus a product
+pieces - products, cart, checkout, orders, reviews - plus a product
 recommendation layer that's designed to be genuinely extendable rather than a
 single hardcoded "suggested products" list.
 
 ## What's included
 
-- **Auth** — JWT based login/register, customer and admin roles
-- **Products** — CRUD (admin), search + filter + sort (public), tags and categories
-- **Cart & Checkout** — add/update/remove items, place an order (no real payment
-  gateway wired up — that's intentionally left as an extension point)
-- **Orders** — order history for customers, status management for admins
-- **Reviews & Ratings** — one review per user per product, auto-updates the
+- **Auth** - JWT based login/register, customer and admin roles
+- **Products** - CRUD (admin), search + filter + sort (public), tags and categories
+- **Cart & Checkout** - add/update/remove items, place an order (no real payment
+  gateway wired up - that's intentionally left as an extension point)
+- **Orders** - order history for customers, status management for admins
+- **Reviews & Ratings** - one review per user per product, auto-updates the
   product's average rating
-- **AI-Powered Suggestions** — this is the part that makes this project different
+- **AI-Powered Suggestions** - this is the part that makes this project different
   from a plain e-commerce clone:
-  - `related products` — content based, matches by category + shared tags
-  - `recommended for you` — personalized using purchase history and viewed
+  - `related products` - content based, matches by category + shared tags
+  - `recommended for you` - personalized using purchase history and viewed
     categories, with an optional AI API call layered on top
 
 ### How the recommendation engine works
@@ -33,7 +33,7 @@ personalized recommendations first try asking an AI model (OpenAI-style chat
 completion endpoint, easy to swap for another provider) for relevant product
 keywords based on the user's interests, then searches the product catalog with
 those. If the AI call fails or isn't configured, it silently falls back to the
-rule based version — nothing breaks either way.
+rule based version - nothing breaks either way.
 
 This split is deliberate: it means the project *works immediately* for anyone
 cloning it, and the "AI-powered" part is a real, swappable layer rather than
@@ -43,7 +43,7 @@ a fake label on a basic query.
 
 - Backend: Node.js, Express, MongoDB (Mongoose), JWT, bcryptjs
 - Frontend: React (Create React App), React Router, Axios, Context API
-- AI: pluggable — works with any OpenAI-compatible chat completion API
+- AI: pluggable - works with any OpenAI-compatible chat completion API
 
 ## Project structure
 
@@ -80,7 +80,7 @@ npm run dev
 
 Runs on `http://localhost:5000`. Make sure MongoDB is running locally or
 point `MONGO_URI` at an Atlas cluster. Leave `AI_API_KEY` blank to use the
-rule based recommender — it works fine without it.
+rule based recommender - it works fine without it.
 
 ### 2. Frontend
 
@@ -103,19 +103,19 @@ you can add categories, then products.
 
 ## Notes for anyone extending this
 
-- No payment gateway — `orderController.js` marks orders as placed without
+- No payment gateway - `orderController.js` marks orders as placed without
   charging anything. Stripe/Razorpay slot in naturally at the checkout step.
 - Recommendation quality depends entirely on how much tag/category data your
-  products have — the more consistent your tagging, the better it performs.
-- No image upload — `imageUrl` is just a plain string field, swap in
+  products have - the more consistent your tagging, the better it performs.
+- No image upload - `imageUrl` is just a plain string field, swap in
   Cloudinary/S3 if you want actual uploads.
-- No pagination on product listing yet — fine for a demo catalog, worth
+- No pagination on product listing yet - fine for a demo catalog, worth
   adding for anything bigger.
-- Stock isn't decremented inside a transaction — acceptable for a base
+- Stock isn't decremented inside a transaction - acceptable for a base
   project, but worth fixing with a Mongo session if you go further with this.
 
 Feel free to fork this and build on top of it for your own project.
 
 ## License
 
-MIT — use it however you like.
+MIT - use it however you like.
