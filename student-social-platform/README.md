@@ -1,24 +1,24 @@
 # Social Media Platform for Students
 
 A base MERN stack project (MongoDB, Express, React, Node.js) for a
-student-focused social network — think a stripped-down Twitter/Instagram
+student-focused social network - think a stripped-down Twitter/Instagram
 built specifically around college life. Built as a starting point for
 student mini/major projects.
 
 ## What's included
 
-- **Auth** — JWT based login/register (username + email + password)
-- **Profiles** — bio, college, avatar (just an image URL, no upload pipeline),
+- **Auth** - JWT based login/register (username + email + password)
+- **Profiles** - bio, college, avatar (just an image URL, no upload pipeline),
   editable by the owner
-- **Posts** — text posts with an optional image URL, delete your own
-- **Feed** — shows posts from people you follow (falls back to a global feed
+- **Posts** - text posts with an optional image URL, delete your own
+- **Feed** - shows posts from people you follow (falls back to a global feed
   if you're not following anyone yet, so new accounts aren't staring at an
   empty page)
-- **Follow system** — follow/unfollow, follower/following counts on profile
-- **Likes & Comments** — like toggle with live count, threaded comments per post
-- **Notifications** — triggered on like, comment, and follow; unread badge in
+- **Follow system** - follow/unfollow, follower/following counts on profile
+- **Likes & Comments** - like toggle with live count, threaded comments per post
+- **Notifications** - triggered on like, comment, and follow; unread badge in
   the navbar, polled every 30s (swap for websockets/SSE if you want it live)
-- **Explore** — search users by name, username, or college
+- **Explore** - search users by name, username, or college
 
 ## Tech stack
 
@@ -73,23 +73,23 @@ in a `.env` file inside `frontend/`).
 ### 3. Try it out
 
 Register a couple of accounts (different browser tabs work fine), search
-for each other on Explore, follow, post something, like/comment — the
+for each other on Explore, follow, post something, like/comment - the
 notification badge should update within 30 seconds on the other account.
 
 ## Notes for anyone extending this
 
-- No image upload — avatars and post images are plain URL fields, wire up
+- No image upload - avatars and post images are plain URL fields, wire up
   Cloudinary/S3/multer if you want real uploads.
-- Notifications are polled, not pushed — fine for a demo, worth swapping
+- Notifications are polled, not pushed - fine for a demo, worth swapping
   for Socket.IO or SSE if you want instant delivery.
-- No direct messaging yet — a natural next feature to add on top of this.
-- No pagination on feed/comments — okay at demo scale, add cursor based
+- No direct messaging yet - a natural next feature to add on top of this.
+- No pagination on feed/comments - okay at demo scale, add cursor based
   pagination before this goes anywhere near production data volumes.
-- Content moderation is minimal — admins can delete any post/comment, but
+- Content moderation is minimal - admins can delete any post/comment, but
   there's no reporting flow yet.
 
 Feel free to fork this and build on top of it for your own project.
 
 ## License
 
-MIT — use it however you like.
+MIT - use it however you like.
