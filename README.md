@@ -6,7 +6,7 @@ A collection of full-stack web development projects, built as base templates for
 
 2. [E-Commerce Platform with AI-Powered Suggestions](./ecommerce-ai-platform)
 
-3. Social Media Platform for Students
+3. [Social Media Platform for Students](./student-social-platform)
 
 4. Online Learning Management System (LMS)
 
